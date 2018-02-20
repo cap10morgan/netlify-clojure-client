@@ -9,5 +9,6 @@
                  [plumula/mimolette "0.2.1"]
                  [com.cemerick/url "0.1.1"]]
 
-  :monkeypatch-clojure-test false)
+  :monkeypatch-clojure-test false
 
+  :deploy-repositories {"releases" {:url "https://repo.clojars.org" :creds :gpg}})
