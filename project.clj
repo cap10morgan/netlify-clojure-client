@@ -7,5 +7,7 @@
                  [clj-http "3.7.0"]
                  [cheshire "5.8.0"]
                  [plumula/mimolette "0.2.1"]
-                 [com.cemerick/url "0.1.1"]])
+                 [com.cemerick/url "0.1.1"]]
+
+  :monkeypatch-clojure-test false)
 
