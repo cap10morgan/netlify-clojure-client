@@ -1,5 +1,7 @@
 # netlify-client
 
+Build status: [![CircleCI](https://circleci.com/gh/cap10morgan/netlify-clojure-client.svg?style=svg)](https://circleci.com/gh/cap10morgan/netlify-clojure-client)
+
 A Clojure library for using the [Netlify API](https://www.netlify.com/docs/api/).
 
 Currently only implements site get and update functions.
