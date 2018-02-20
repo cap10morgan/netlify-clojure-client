@@ -11,4 +11,5 @@
 
   :monkeypatch-clojure-test false
 
-  :deploy-repositories {"releases" {:url "https://repo.clojars.org" :creds :gpg}})
+  :deploy-repositories {"releases" :clojars
+                        "snapshots" :clojars})
