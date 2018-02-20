@@ -2,6 +2,8 @@
 
 Build status: [![CircleCI](https://circleci.com/gh/cap10morgan/netlify-clojure-client.svg?style=svg)](https://circleci.com/gh/cap10morgan/netlify-clojure-client)
 
+Latest release: [![Clojars Project](https://img.shields.io/clojars/v/cap10morgan/netlify-client.svg)](https://clojars.org/cap10morgan/netlify-client)
+
 A Clojure library for using the [Netlify API](https://www.netlify.com/docs/api/).
 
 Currently only implements site get and update functions.
