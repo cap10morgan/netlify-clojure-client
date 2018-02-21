@@ -1,4 +1,4 @@
-(defproject cap10morgan/netlify-client "0.1.1-SNAPSHOT"
+(defproject cap10morgan/netlify-client "0.1.1"
   :description "Netlify API Client"
   :url "https://github.com/cap10morgan/netlify-client"
   :license {:name "Eclipse Public License"
