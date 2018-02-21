@@ -1,7 +1,8 @@
 (ns netlify-client.core
   (:require [clojure.spec.alpha :as s]
             [netlify-client.api :as api]
-            [netlify-client.authentication :as auth]))
+            [netlify-client.authentication :as auth]
+            [netlify-client.specs :as specs]))
 
 (s/def ::client-id string?)
 (s/def ::client-secret string?)
@@ -12,4 +13,4 @@
 
 (s/fdef access-token
   :args (s/cat :creds ::creds)
-  :ret  ::api/access-token)
+  :ret  ::specs/access-token)
