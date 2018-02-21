@@ -23,7 +23,7 @@ Currently only implements site get and update functions.
 (defn update-my-site [site-id new-site-params]
   (let [access-token (netlify/access-token {:client-id "your-client-id"
                                             :client-secret "your-client-secret"})]
-      (site/update access-token site-id new-site-params)))
+    (site/update access-token site-id new-site-params)))
 ```
 
 ## License
