@@ -1,7 +1,8 @@
 (ns netlify-client.authentication
   (:require [clj-http.client :as http]
             [clojure.spec.alpha :as s]
-            [netlify-client.specs :as specs]))
+            [netlify-client.specs :as specs]
+            [clojure.string :as str]))
 
 (def oauth-token-path
   "/oauth/token")
@@ -12,7 +13,7 @@
 
 (defn build-access-token-request [api-url {:keys [client-id client-secret]}]
   {:method      :post
-   :url         api-url
+   :url         (str api-url oauth-token-path)
    :basic-auth  [client-id client-secret]
    :form-params {:grant_type "client_credentials"
                  :client_id client-id}
@@ -30,7 +31,7 @@
                :creds   (s/keys :req-un [::client-id ::client-secret]))
   :ret  (s/keys :req-un [::specs/method ::specs/url ::basic-auth ::form-params
                          ::as])
-  :fn   (s/and #(= (-> % :args :api-url) (-> % :ret :url))
+  :fn   (s/and #(str/starts-with? (-> % :ret :url) (-> % :args :api-url))
                #(= (-> % :args :creds :client-id)
                    (-> % :ret :form-params :client_id))
                #(= (-> % :args :creds :client-id)
