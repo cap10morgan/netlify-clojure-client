@@ -10,8 +10,6 @@ Currently only implements site get and update functions.
 
 ## Usage
 
-Dependency: `[cap10morgan/netlify-client "0.1.0"]`
-
 ```clojure
 (ns my-code
   (:require [netlify-client.core :as netlify]
