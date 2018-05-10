@@ -9,3 +9,7 @@
 (defspec-instrument-test test-http-verb->params-key-spec `http-verb->params-key)
 
 (defspec-instrument-test test-build-request-spec `build-request)
+
+(defspec-instrument-test test-ensure-non-negative-spec `ensure-non-negative)
+
+(defspec-instrument-test test-rate-limit-wait-time-spec `rate-limit-wait-time)
