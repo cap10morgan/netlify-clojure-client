@@ -43,12 +43,12 @@
                #(str/includes? % version))
   :fn #(str/includes? (:ret %) (-> % :args :resource)))
 
-(s/def ::params (s/nilable (s/map-of keyword? string?)))
+(s/def ::params (s/nilable (s/map-of keyword? string? :gen-max 3)))
 (s/def ::status ::http-status)
 (s/def ::headers (s/with-gen
                   (s/map-of ::specs/non-blank-string ::specs/non-blank-string)
                   specs/http-header-gen))
-(s/def ::body (s/map-of keyword? any?))
+(s/def ::body (s/map-of keyword? any? :gen-max 1))
 (s/def ::error (s/keys :req-un [::status ::headers ::body]))
 (s/def ::error-response (s/keys :req-un [::error]))
 (s/def ::request-args (s/cat :access-token ::specs/access-token
@@ -144,11 +144,9 @@
                           (get "x-ratelimit-reset"))]
            (if (rate-limited? (-> % :args :response :status))
              (if header
-               (let [curr-minus-header (- (Integer/parseInt header)
-                                          (quot (System/currentTimeMillis) 1000))
-                     ret (:ret %)]
-                 (< curr-minus-header
-                    ret))
+               (let [header-delta (- (Integer/parseInt header)
+                                     (quot (System/currentTimeMillis) 1000))]
+                 (< header-delta (:ret %)))
                (= 5 (:ret %)))
              (zero? (:ret %)))))
 
