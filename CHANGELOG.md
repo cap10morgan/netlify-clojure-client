@@ -3,6 +3,13 @@ All notable changes to this project will be documented in this file. This change
 
 ## [Unreleased]
 
+## [0.2.0] - 2018-05-14
+### Added
+- New functions in the `netlify-client.site` namespace
+    - `create` - create a new site
+    - `create-from-github` - create a new site deployed from a GitHub repo
+    - `delete` - delete a site
+
 ## [0.1.1] - 2018-02-20
 ### Fixed
 - Fixed an outdated spec namespace reference in netlify-client.core.
@@ -11,5 +18,6 @@ All notable changes to this project will be documented in this file. This change
 ## 0.1.0 - 2018-02-20
 - Initial release
 
-[Unreleased]: https://github.com/your-name/netlify-client/compare/0.1.1...HEAD
-[0.1.1]: https://github.com/your-name/netlify-client/compare/0.1.0...0.1.1
+[Unreleased]: https://github.com/cap10morgan/netlify-clojure-client/compare/0.1.2...HEAD
+[0.2.0]: https://github.com/cap10morgan/netlify-clojure-client/compare/0.1.1...0.2.0
+[0.1.1]: https://github.com/cap10morgan/netlify-clojure-client/compare/0.1.0...0.1.1
